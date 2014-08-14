@@ -22,7 +22,7 @@
 	};
 
 	app.controller('TestController', function(){
-		this.foo = "bar";
+		this.foo = "bar baz";
 		
 		this.tabs = [
             { name: "home", href: "#home", active: true },

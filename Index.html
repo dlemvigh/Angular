@@ -12,28 +12,12 @@
     <script src="js/underscore-min.js"></script>
 </head>
 <body>
-	<script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '{your-app-id}',
-          xfbml      : true,
-          version    : 'v2.0'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
 	<div class="content" ng-controller="TestController as test">
         <ul class="nav nav-pills">
             <li ng-repeat="tab in test.tabs" ng-class="{active:tab.active}"><a ng-href="{{tab.href}}" ng-click="test.clearTabs(); tab.active = true">{{tab.name}}</a></li>
         </ul>
-        <div class="well well-sm" ng-controller="PhoneController">
+		<section>
+        <div ng-controller="PhoneController">
             <div ng-repeat="l in list">
                 <input type="text" ng-model="l.name" placeholder="text" />
                 <input type="password" ng-model="l.phone" placeholder="phone" />
@@ -42,6 +26,7 @@
             <button type="button" ng-click="add()">+</button>{{list.length}}
             <pre>{{list | json}}</pre>
         </div>
+		</section>
 		<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
         <div class="row">
             <div class="col-md-4 col-sm-8">
