@@ -43,8 +43,10 @@
         {{test.foo}}
         <h2>Form</h2>
         <form role="form" ng-controller="FormController as form">
-            <button type="button" ng-click="foo()">foo</button>
-            <label><input type="checkbox" ng-model="bool" ng-click="foo()" />bool</label>
+            <button type="button" ng-click="foo()">foo</button><br/>
+            <label><input type="checkbox" ng-model="bool" ng-click="foo()" ng-show="false" />{{bool | checkmark}}</label><br/>
+			
+		
             <div class="form-group">
                 <label>Text <input type="text" class="form-control" ng-model="text" /></label>
             </div>

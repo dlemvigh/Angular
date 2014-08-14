@@ -20,7 +20,7 @@
 	    this.name = "john doe";
 	    this.phone = "12345678";
 	};
-
+	
 	app.controller('TestController', function(){
 		this.foo = "bar baz";
 		
